@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- PWA -->
+    <!-- Pintar la barra superior o de estado ANDROID -->
+    <meta name="theme-color" content="#387c6d" />
+    <!-- SEO -->
+    <!-- Optimizado para dispositivos móviles -->
+    <meta name="MobileOptimize" content="width" />
+    <!-- Amigable para el uso en movil -->
+    <meta name="HandHeldFriendly" content="true" />
+    <!-- Modificar barra de estado en IOS -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <!-- CONTENT
+        default = blanca,
+        black = negra
+        black-translucent = toma un color de manera dinámica; 
+                            caso contrario negro
+     -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <!-- ICONOS -->
+    <link rel="shortcut icon" href="img/favicon.png" type="image/png" />
+    <!-- Icono para que demos click -->
+    <link rel="apple-touch-icon" href="img/favicon.png" />
+    <link rel="apple-touch-startup-image" href="img/favicon.png" />
+    <!-- Manifiesto -->
+    <link rel="manifest" href="./manifest.json" />
+    <!-- FIN ICONOS -->
+
+    <!-- Fin PWA -->
+    <title>Practica | Vue.js</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="resources/css/archive01.css" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+    <!-- FontAwesome -->
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+    <!-- Alerts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+
+<body>
+    <div id="app" class="container mt-4">
+        <div class="h3">{{title_page}}</div>
+        <div class="row">
+            <div class="col-lg-9 col-md-12 p-4">
+                <input type="text" class="form-control my-3" v-model="nueva_tarea" @keyup.enter="agregar_tarea" required>
+                <button class="btn btn-primary" @click="agregar_tarea">Agregar</button>
+                <div class="row">
+                    <hr class="my-4">
+                    <div class="col py-4">
+                        <div class="h3 text-muted">Lista de tareas</div>
+                        <ul class="">
+                            <li class="d-flex justify-content-between align-items-center" v-for="(item,index) of tareas" :class="['alert',item.estado ? 'alert-success' : 'alert-danger']">
+                                <div>
+                                    <span class="text-muted">COD-0{{index}} </span>
+                                    <span class="h3 text-capitalize">{{item.nombre}}</span>
+                                </div>
+                                <div>
+                                    <button class="btn btn-primary btn-sm" @click="editar_tarea(index)">OK</button>
+                                    <button class="btn btn-danger btn-sm" @click="eliminar_tarea(index)">X</button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col border" id="notificaciones"></div>
+        </div>
+    </div>
+    <!-- CDN Vue JS -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <!-- JS -->
+    <script src="resources/js/archive01.js"></script>
+    <!--  -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+
+</html>

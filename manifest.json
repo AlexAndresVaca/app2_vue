@@ -1,0 +1,43 @@
+{
+    "name": "Lista de tareas",
+    "short_name": "Tareas",
+    "description": "Prueba de otra aplicación en VUE, :3 Suerte!",
+    "background_color": "#0000",
+    "theme_color": "#fff",
+    "start_url": "./?umt_sources=web_app_manifest",
+    "scope": "./",
+    "lang": "es-EC",
+    "display": "standalone",
+    "orientation": "portrait",
+    "icons": [{
+            "src": "./img/favicon.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "./img/icon32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        },
+        {
+            "src": "./img/icon64.png",
+            "sizes": "64x64",
+            "type": "image/png"
+        },
+        {
+            "src": "./img/icon128.png",
+            "sizes": "128x128",
+            "type": "image/png"
+        },
+        {
+            "src": "./img/icon256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        },
+        {
+            "src": "./img/icon1024.png",
+            "sizes": "1024x1024",
+            "type": "image/png"
+        }
+    ]
+}
