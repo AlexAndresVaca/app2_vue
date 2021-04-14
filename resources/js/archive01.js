@@ -1,7 +1,7 @@
 const app = new Vue({
     el: '#app',
     data: {
-        title_page: 'My GYM',
+        title_page: 'APP 2 VUE',
         tareas: [],
         nueva_tarea: '',
     },
